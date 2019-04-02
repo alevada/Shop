@@ -1,0 +1,19 @@
+// Place all the styles related to the Sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+legend {
+    margin: 0;
+    padding-bottom: 0.5em;
+    font: 150% sans-serif;
+    color: #226;
+}
+
+fieldset {
+  border: 3px dotted #77d
+}
+
+.login{
+  margin-left: 2em;
+  margin-bottom: 1em;
+}

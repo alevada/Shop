@@ -1,0 +1,25 @@
+// Place all the styles related to the Admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+h1 {
+  margin: 0;
+  padding-bottom: 0.5em;
+  font: 150% sans-serif;
+  color: #226;
+  border-bottom: 3px dotted #77d;
+  margin-bottom: 1em;
+}
+
+banner {
+  position: relative;
+  min-height: 40px;
+  background: #9c9;
+  padding: 10px;
+  border-bottom: 2px solid;
+  font: small-caps 40px/40px "Times New Roman", serif;
+  color: #282;
+  text-align: center;
+
+}
