@@ -10,24 +10,25 @@
     <p id="notice"><%= notice %></p>
   <% end %>
 
-
   <%= form_tag do %>
     <fieldset>
-      <legend>Please Log In</legend>
+      <legend> Please Log In </legend>
       <div class="login">
-      <div>
-        <%= label_tag :name, 'Name:' %>
-        <%= text_field_tag :name, params[:name] %>
-      </div>
+        <div>
+          <%= label_tag :name, 'Name:' %>
+          <%= text_field_tag :name, params[:name] %>
+        </div>
 
-      <div>
-        <%= label_tag :password, 'Password:' %>
-        <%= password_field_tag :password, params[:password] %>
-      </div>
+        <div>
+          <%= label_tag :password, 'Password:' %>
+          <%= password_field_tag :password, params[:password] %>
+        </div>
 
-      <div>
-        <%= submit_tag "Login" %>
-      </div>
+        <div>
+          <br />
+          <%= submit_tag "Login" %> &nbsp; &nbsp;
+          <%= link_to "Sign up", new_user_path %>
+        </div>
       </div>
     </fieldset>
   <% end %>

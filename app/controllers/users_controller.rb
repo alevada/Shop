@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   @user = User.new(user_params)
   respond_to do |format|
     if @user.save
-      format.html { redirect_to users_url,
+      format.html { redirect_to root_path,
                                 notice: "User #{@user.name} was successfully created." }
       format.json { render :show, status: :created, location: @user }
     else
@@ -59,13 +59,13 @@ end
     @user.destroy
     #session[:user_id] = nil
     respond_to do |format|
-      format.html { redirect_to root_url, notice: "User #{@user.name} deleted" }
+      format.html { redirect_to admin_path, notice: "User #{@user.name} deleted" }
       format.json { head :no_content }
-    end
+      end
     end
   rescue_from 'User::Error' do |exception|
     redirect_to users_url, notice: exception.message
-  end
+    end
 
   private
     # Use callbacks to share common setup or constraints between actions.

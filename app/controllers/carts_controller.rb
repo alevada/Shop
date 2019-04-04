@@ -2,11 +2,16 @@
 class CartsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
   before_action :set_cart, only: [:show, :edit, :destroy, :update]
+
   # GET /carts
   # GET /carts.json
   def index
     authorize! :read, Cart
-    @carts = Cart.all
+    @carts = if current_user.role == 2
+               Cart.all
+             else
+               [current_user.cart]
+             end
   end
 
   # GET /carts/1
@@ -30,6 +35,8 @@ class CartsController < ApplicationController
 
     respond_to do |format|
       if @cart.save
+        current_user.cart = @cart
+        current_user.save
         format.html { redirect_to @cart, notice: 'Cart was successfully created.' }
         format.json { render :show, status: :created, location: @cart }
       else

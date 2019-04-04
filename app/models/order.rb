@@ -2,7 +2,7 @@
 class Order < ApplicationRecord
   has_many :line_items, dependent: :destroy
 
-  validates :name, :address, :email, presence: true, uniqueness: true
+  validates :name, :address, :email, presence: true
   #validates :pay_types, inclusion: pay_type.keys
 
 
