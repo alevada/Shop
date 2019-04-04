@@ -20,4 +20,6 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     redirect_to admin_path, notice:"Successfully logged out"
   end
+
 end
+

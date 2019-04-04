@@ -5,7 +5,11 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = if current_user.role == 2
+              User.all
+             else
+              [current_user]
+            end
   end
 
   # GET /users/1
@@ -59,7 +63,7 @@ end
     @user.destroy
     #session[:user_id] = nil
     respond_to do |format|
-      format.html { redirect_to admin_path, notice: "User #{@user.name} deleted" }
+      format.html { redirect_to admin_path, notice: "Account #{@user.name} deleted" }
       format.json { head :no_content }
       end
     end
